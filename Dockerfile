@@ -1,4 +1,4 @@
 FROM ubuntu:18.04
-COPY 1python.py /usr/local/bin/
-COPY 2python.py /usr/local/bin/
-CMD ['/usr/local/bin/2python.py']
+COPY python1.py /usr/local/bin/
+COPY python2.py /usr/local/bin/
+CMD ['/usr/local/bin/python1.py']

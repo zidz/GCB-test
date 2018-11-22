@@ -1,8 +1,8 @@
 steps:
-- name: 'ubuntu:18.04'
-  args: ['bash','pylint.sh' ]
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['build', '-t', 'gcr.io/syb-staging-platform/gcb-test', '.']
+  args: ['build', '-f', 'Dockerfile.test','-t', 'tester', '.' ]
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '-f', 'Dockerfile', '-t', 'gcr.io/syb-staging-platform/gcb-test', '.']
 images: ['gcr.io/syb-staging-platform/gcb-test']
 
 
