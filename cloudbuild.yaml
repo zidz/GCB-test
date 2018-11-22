@@ -1,0 +1,8 @@
+steps:
+- name: 'debian'
+  args: ['pylint','*.py' ]
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '-t', 'gcr.io/syb-staging-platform/gcb-test', '.']
+images: ['gcr.io/syb-staging-platform/gcb-test']
+
+
