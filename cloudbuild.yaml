@@ -1,5 +1,5 @@
 steps:
-- name: 'ubuntu'
+- name: 'ubuntu:18.04'
   args: ['bash','pylint.sh' ]
 - name: 'gcr.io/cloud-builders/docker'
   args: ['build', '-t', 'gcr.io/syb-staging-platform/gcb-test', '.']
