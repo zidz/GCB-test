@@ -1,5 +1,9 @@
 FROM ubuntu:18.04
+
 COPY web.py /usr/local/bin/
-RUN apt-get update && apt-get install -y \
-  pylint3 && \
-  pylint3 /usr/local/bin/web.py 
+
+RUN apt-get update && \
+    apt-get install -y python-pip \
+    pylint3 && \
+    pip install flask && \
+    pylint3 /usr/local/bin/web.py 
