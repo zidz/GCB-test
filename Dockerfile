@@ -1,4 +1,11 @@
 FROM ubuntu:18.04
-COPY python1.py /usr/local/bin/
-COPY python2.py /usr/local/bin/
-CMD ['/usr/local/bin/python1.py']
+
+RUN apt-get update && \
+    apt-get install -y python-pip && \
+    pip install flask
+
+COPY web.py /usr/local/bin/
+
+EXPOSE 5000
+
+CMD ["python", "/usr/local/bin/web.py"]
